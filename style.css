@@ -1,0 +1,37 @@
+body {
+    font-family: sans-serif;
+    text-align: center;
+    margin: 2em;
+}
+#cups {
+    display: flex;
+    justify-content: center;
+    gap: 1em;
+    margin-bottom: 1em;
+}
+.cup {
+    width: 60px;
+    height: 80px;
+    background: tan;
+    border: 3px solid sienna;
+    border-bottom: none;
+    border-radius: 0 0 30px 30px;
+    position: relative;
+    cursor: pointer;
+}
+.cup.disabled {
+    opacity: 0.5;
+    pointer-events: none;
+}
+#message {
+    margin-bottom: 1em;
+    font-size: 1.2em;
+}
+.flag-icon {
+    position: absolute;
+    top: -20px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 2em;
+    opacity: 1;
+}
