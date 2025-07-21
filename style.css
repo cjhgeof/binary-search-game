@@ -35,3 +35,10 @@ body {
     font-size: 2em;
     opacity: 1;
 }
+
+#creds {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    font-size: 5px;
+}
