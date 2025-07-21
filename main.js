@@ -110,21 +110,34 @@ function disableAll() {
 
 async function checkRoute(game) {
     try {
-        const response = await fetch(('http://josephiancodex.me:5002/checkRoute'), {
+        // const response = await fetch(('http://josephiancodex.me:5002/checkRoute'), {
+        //     method: 'POST',
+        //     headers: {
+        //         'Content-Type': 'application/json'
+        //     },
+        //     body: JSON.stringify({"game": game}),
+        // });
+
+        // if (!response.ok) {
+        //     throw new Error('Network response was not ok');
+        // }
+
+        // const result = await response.json();
+
+        const response = await fetch('https://josephiancodex.me/bsgame/checkRoute.php', {
             method: 'POST',
-            headers: {
-                'Content-Type': 'application/json'
-            },
-            body: JSON.stringify({"game": game}),
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ game })
         });
 
         if (!response.ok) {
-            throw new Error('Network response was not ok');
+        throw new Error(`Network response was not ok (status ${response.status})`);
         }
 
         const result = await response.json();
 
         flag = result;
+        console.log(flag);
     
     } catch (error) {
         console.error('Error fetching data from backend:', error);
